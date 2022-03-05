@@ -1,0 +1,28 @@
+﻿@model HomeViewModel
+<div id="main">
+    <div class="inner">
+        <header>
+            <h1>
+                @Html.Raw(Model.Banners.Title)
+            </h1>
+            <p>@Model.Banners.Text</p>
+        </header>
+        <section class="tiles">
+            @foreach (Projects item in Model.Projects)
+            {
+                <article class="style1">
+                    <span class="image">
+                        <img src="@item.Image"/>
+                    </span>
+                    <a href="/specialpage/genericpage/@item.Id">
+                        <h2>@item.Heading</h2>
+                        <div class="content">
+                            <p>@item.Text</p>
+                        </div>
+                    </a>
+                </article>
+            }
+
+        </section>
+    </div>
+</div>
